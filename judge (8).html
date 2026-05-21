@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#00b496">
+<title>DREAM 투표 (사전신청)</title>
+<script>(function(){
+var ua=navigator.userAgent||'';if(!/KAKAOTALK/i.test(ua))return;
+var url=location.href;
+if(/Android/i.test(ua)){location.href='intent://'+url.replace(/https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;end';return;}
+var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>*{box-sizing:border-box;margin:0;padding:0}body{min-height:100dvh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#e0f8f3,#edfaf7);font-family:-apple-system,sans-serif;padding:24px;text-align:center}.box{background:#fff;border:1px solid rgba(0,180,150,.28);border-radius:24px;padding:36px 24px;max-width:340px;width:100%;box-shadow:0 8px 32px rgba(0,140,110,.12)}.ico{font-size:3rem;margin-bottom:16px}h2{font-size:1.2rem;font-weight:800;color:#005f50;margin-bottom:10px}p{font-size:14px;color:#6b9990;line-height:1.8;margin-bottom:20px}.steps{text-align:left;background:#f4faf8;border-radius:12px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#0c2822;line-height:2}.cb{width:100%;padding:14px;background:linear-gradient(135deg,#00b496,#008f78);color:#fff;border:none;border-radius:11px;font-size:15px;font-weight:800;cursor:pointer;margin-bottom:10px}.ub{background:#f4faf8;border:1.5px solid rgba(0,180,150,.28);border-radius:9px;padding:10px 12px;font-size:11px;color:#008f78;word-break:break-all}<\/style><\/head><body><div class="box"><div class="ico">&#127760;<\/div><h2>외부 브라우저에서 열어주세요<\/h2><p>카카오톡에서는 투표 기능이<br>동작하지 않습니다<\/p><div class="steps">1&#65039;&#8419; 아래 주소 복사 버튼 누르기<br>2&#65039;&#8419; Safari 또는 Chrome 열기<br>3&#65039;&#8419; 주소창에 붙여넣기 후 이동<\/div><button class="cb" id="cb">&#128203; 주소 복사하기<\/button><div class="ub">'+url+'<\/div><\/div><\/body><\/html>';
+document.open();document.write(h);document.close();
+setTimeout(function(){var b=document.getElementById('cb');if(b)b.onclick=function(){navigator.clipboard.writeText(url).then(function(){b.textContent='복사됐어요! Safari에서 열어주세요';b.style.background='#4ade80';}).catch(function(){alert('위 주소를 복사해서 Safari로 접속해주세요');});};},100);
+})();
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--t:#00b496;--t2:#008f78;--t3:#005f50;--lt:rgba(0,180,150,.10);--bd:rgba(0,180,150,.28);--bg:#edfaf7;--cd:#fff;--c2:#f4faf8;--tx:#0c2822;--mu:#6b9990;--dm:#b0cfc9;--re:#e05050;--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px)}
+html,body{height:100%;overflow-x:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;color:var(--tx);-webkit-font-smoothing:antialiased}
+.scr{display:none;min-height:100dvh;flex-direction:column}.scr.on{display:flex}
+.btn{display:flex;align-items:center;justify-content:center;padding:14px;border-radius:11px;border:none;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;width:100%;touch-action:manipulation;-webkit-appearance:none;transition:transform .1s}
+.btn:active{transform:scale(.96)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important}
+.bt{background:linear-gradient(135deg,var(--t),var(--t2));color:#fff}
+.toast{position:fixed;bottom:calc(24px + var(--sb));left:50%;transform:translateX(-50%);background:var(--t3);color:#fff;padding:10px 22px;border-radius:30px;font-size:13px;font-weight:700;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;box-shadow:0 6px 24px rgba(0,80,60,.35)}
+#s-load{align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#e0f8f3,#edfaf7)}
+.spin{width:48px;height:48px;border:4px solid var(--bd);border-top-color:var(--t);border-radius:50%;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.load-t{font-size:14px;color:var(--mu);font-weight:600;text-align:center;padding:0 24px;line-height:1.7}
+#s-pw,#s-name,#s-wait,#s-done{align-items:center;justify-content:center;padding:calc(24px + var(--st)) 16px calc(24px + var(--sb));background:linear-gradient(160deg,#e0f8f3,#edfaf7 60%)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.box{width:100%;max-width:360px;background:var(--cd);border:1px solid var(--bd);border-radius:24px;padding:30px 22px;text-align:center;box-shadow:0 8px 32px rgba(0,140,110,.12);animation:up .4s ease}
+.bico{width:70px;height:70px;border-radius:15px;border:2px solid var(--bd);background:var(--c2);margin:0 auto 13px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.box h2{font-size:1.2rem;font-weight:800;color:var(--t3);margin-bottom:5px}
+.box p{font-size:13px;color:var(--mu);line-height:1.7;margin-bottom:18px}
+.pw-inp{width:100%;padding:15px;background:var(--c2);border:2px solid var(--bd);border-radius:13px;font-size:1.5rem;font-weight:800;text-align:center;outline:none;-webkit-appearance:none;letter-spacing:5px;font-family:monospace;color:var(--t2);margin-bottom:8px;transition:border .2s}
+.pw-inp:focus{border-color:var(--t);background:#fff;box-shadow:0 0 0 3px rgba(0,180,150,.09)}
+.pw-inp::placeholder{font-size:1rem;letter-spacing:1px;color:var(--dm)}
+.pw-err{font-size:13px;color:var(--re);min-height:20px;font-weight:600;margin-bottom:10px}
+.nm-inp{width:100%;padding:13px 14px;background:var(--c2);border:1.5px solid var(--bd);border-radius:10px;font-size:16px;font-family:inherit;color:var(--tx);outline:none;-webkit-appearance:none;margin-bottom:12px;transition:border .2s}
+.nm-inp:focus{border-color:var(--t);background:#fff;box-shadow:0 0 0 3px rgba(0,180,150,.09)}
+.nm-inp::placeholder{color:var(--dm)}
+.wbox2{width:100%;max-width:360px;background:var(--cd);border:1px solid var(--bd);border-radius:24px;padding:38px 26px;text-align:center;box-shadow:0 6px 26px rgba(0,140,110,.10)}
+.rw{width:88px;height:88px;margin:0 auto 18px;position:relative;display:flex;align-items:center;justify-content:center}
+.rw::before,.rw::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--t);animation:rip 2s ease-out infinite}
+.rw::after{animation-delay:.75s;opacity:.4}
+@keyframes rip{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.4);opacity:0}}
+.wbox2 h2{font-size:1.1rem;font-weight:800;color:var(--t3);margin-bottom:6px}
+.wbox2 p{font-size:13px;color:var(--mu);line-height:1.7}
+.nm-pill{display:inline-block;background:var(--lt);border:1px solid var(--bd);color:var(--t2);padding:5px 15px;border-radius:20px;font-size:13px;font-weight:700;margin-top:13px}
+#s-vote{background:var(--bg);justify-content:flex-start}
+.vh{background:linear-gradient(120deg,#00c9a7,#00b496 55%,#008f78);padding:calc(13px + var(--st)) 15px 13px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 14px rgba(0,140,100,.25)}
+.vhl{width:36px;height:36px;border-radius:9px;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.vhi{flex:1}.vht{color:#fff;font-size:13px;font-weight:800}.vhs{color:rgba(255,255,255,.8);font-size:11px;margin-top:1px}
+.live-t{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:700}
+.live-t .d{width:6px;height:6px;border-radius:50%;background:#fff;animation:bld 1s infinite}
+@keyframes bld{0%,100%{opacity:1}50%{opacity:.3}}
+.vbody{flex:1;display:flex;flex-direction:column;padding:16px 14px calc(16px + var(--sb))}
+.vins{font-size:15px;font-weight:800;color:var(--t3);margin-bottom:3px}
+.vsub{font-size:12px;color:var(--mu);margin-bottom:14px}
+.vbtns{display:flex;flex-direction:column;gap:12px;flex:1}
+.vbtns.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.vbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:26px 16px;border-radius:20px;border:2.5px solid var(--bd);background:var(--cd);cursor:pointer;transition:border .15s,background .15s;font-family:inherit;touch-action:manipulation;-webkit-appearance:none;position:relative}
+.vbtns.g2 .vbtn{padding:20px 10px}
+.vbtn:not(:disabled):active{transform:scale(.96)}.vbtn:disabled{opacity:.32;cursor:not-allowed}.vbtn.sel{border-width:3px}
+.vbtn .vn{font-size:2.6rem;font-weight:800;line-height:1;margin-bottom:5px}.vbtns.g2 .vbtn .vn{font-size:2rem}
+.vbtn .vnm{font-size:1.15rem;font-weight:800;color:var(--tx)}.vbtns.g2 .vbtn .vnm{font-size:.95rem}
+.vbtn .vsu{font-size:11px;color:var(--mu);margin-top:4px}
+.vbtn .vbg{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff}
+.c1 .vn{background:linear-gradient(135deg,#00b496,#005f50);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c1.sel{background:rgba(0,180,150,.08);border-color:#00b496}.c1 .vbg{background:#00b496}
+.c2 .vn{background:linear-gradient(135deg,#3b82f6,#1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c2.sel{background:rgba(59,130,246,.08);border-color:#3b82f6}.c2 .vbg{background:#3b82f6}
+.c3 .vn{background:linear-gradient(135deg,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c3.sel{background:rgba(245,158,11,.08);border-color:#f59e0b}.c3 .vbg{background:#f59e0b}
+.c4 .vn{background:linear-gradient(135deg,#ef4444,#b91c1c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c4.sel{background:rgba(239,68,68,.08);border-color:#ef4444}.c4 .vbg{background:#ef4444}
+.c5 .vn{background:linear-gradient(135deg,#8b5cf6,#6d28d9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c5.sel{background:rgba(139,92,246,.08);border-color:#8b5cf6}.c5 .vbg{background:#8b5cf6}
+.c6 .vn{background:linear-gradient(135deg,#10b981,#047857);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c6.sel{background:rgba(16,185,129,.08);border-color:#10b981}.c6 .vbg{background:#10b981}
+.c7 .vn{background:linear-gradient(135deg,#ec4899,#be185d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c7.sel{background:rgba(236,72,153,.08);border-color:#ec4899}.c7 .vbg{background:#ec4899}
+.c8 .vn{background:linear-gradient(135deg,#6366f1,#4338ca);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.c8.sel{background:rgba(99,102,241,.08);border-color:#6366f1}.c8 .vbg{background:#6366f1}
+.cbar{padding:0 14px calc(14px + var(--sb));display:none}
+@keyframes su{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+.dc{width:100%;max-width:360px;background:var(--cd);border:1px solid var(--bd);border-radius:24px;padding:38px 26px;text-align:center;box-shadow:0 6px 26px rgba(0,140,110,.10);animation:up .4s ease}
+.done-c{width:86px;height:86px;border-radius:50%;background:var(--lt);border:3px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:2.3rem;margin:0 auto 18px}
+.dc h2{font-size:1.4rem;font-weight:800;color:var(--t3);margin-bottom:5px}
+.chose-b{display:inline-block;background:var(--lt);border:2px solid var(--bd);color:var(--t2);padding:8px 22px;border-radius:12px;font-size:1.05rem;font-weight:800;margin:12px 0;word-break:keep-all}
+.dc-sub{font-size:13px;color:var(--mu);line-height:1.7}
+.nxt{margin-top:16px;padding:12px;background:var(--c2);border-radius:10px;border:1px solid var(--bd);font-size:12px;color:var(--mu)}</style>
+</head>
+<body>
+<div id="s-load" class="scr on"><div class="spin"></div><div class="load-t" id="load-t">연결 중...</div></div>
+
+<div id="s-pw" class="scr">
+  <div class="box">
+    <div class="bico">🏆</div>
+    <h2>DREAM 심사 투표</h2>
+    <p>관리자에게 받은 비밀번호를<br>입력하세요</p>
+    <input class="pw-inp" type="text" id="pw-in" placeholder="비밀번호" autocomplete="off" onkeydown="if(event.key==='Enter')checkPw()">
+    <div class="pw-err" id="pw-err"></div>
+    <button class="btn bt" onclick="checkPw()">확인 →</button>
+  </div>
+</div>
+
+<div id="s-name" class="scr">
+  <div class="box" style="padding:30px 22px">
+    <div class="bico" style="width:60px;height:60px;border-radius:13px;font-size:1.8rem">🎤</div>
+    <h2>심사위원 입장</h2>
+    <p>이름을 입력하고 투표에 참여하세요</p>
+    <input class="nm-inp" type="text" id="nm-in" placeholder="예: 홍길동, 심사위원1..." autocomplete="off" onkeydown="if(event.key==='Enter')doJoin()">
+    <button class="btn bt" onclick="doJoin()">입장하기 →</button>
+  </div>
+</div>
+<div id="s-wait" class="scr">
+  <div class="wbox2">
+    <div class="rw"><span style="font-size:2.2rem">🎤</span></div>
+    <h2>무대 진행 중</h2>
+    <p>관리자가 투표를 열면<br>자동으로 화면이 바뀝니다</p>
+    <div class="nm-pill" id="nm-pill">심사위원</div>
+  </div>
+</div>
+<div id="s-vote" class="scr">
+  <div class="vh">
+    <div class="vhl">🏆</div>
+    <div class="vhi"><div class="vht">DREAM 심사 투표</div><div class="vhs" id="vjn">심사위원</div></div>
+    <span class="live-t"><span class="d"></span>LIVE</span>
+  </div>
+  <div class="vbody">
+    <div class="vins" id="v-ins">참가자를 선택하세요</div>
+    <div class="vsub" id="v-sub">탭하여 선택</div>
+    <div class="vbtns" id="vbtns"></div>
+  </div>
+  <div class="cbar" id="cbar"><button class="btn bt" id="btn-confirm" onclick="confirmVote()">✓ 투표 확정</button></div>
+</div>
+<div id="s-done" class="scr">
+  <div class="dc">
+    <div class="done-c">✓</div>
+    <h2>투표 완료!</h2>
+    <div class="chose-b" id="chose-b">—</div>
+    <p class="dc-sub">선택하셨습니다</p>
+    <div class="nxt">⏳ 다음 무대 투표를 기다려 주세요</div>
+  </div>
+</div>
+<div id="modal" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:flex-end;justify-content:center">
+  <div onclick="event.stopPropagation()" style="background:#fff;border-radius:24px 24px 0 0;padding:28px 22px calc(28px + env(safe-area-inset-bottom,0px));width:100%;max-width:480px;box-shadow:0 -8px 40px rgba(0,0,0,.18);animation:su .25s ease">
+    <div style="text-align:center;margin-bottom:18px">
+      <div style="font-size:2rem;margin-bottom:10px">🗳️</div>
+      <div style="font-size:16px;font-weight:800;color:#0c2822;margin-bottom:6px">이 선택으로 투표할까요?</div>
+      <div style="font-size:13px;color:#6b9990;margin-bottom:14px">한 번 제출하면 변경할 수 없어요</div>
+      <div id="modal-names" style="background:rgba(0,180,150,.10);border:1.5px solid rgba(0,180,150,.28);border-radius:12px;padding:12px 16px;font-size:1.05rem;font-weight:800;color:#008f78;word-break:keep-all"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <button onclick="closeModal()" style="padding:14px;border-radius:11px;border:1.5px solid rgba(0,180,150,.28);background:#f4faf8;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;color:#6b9990;-webkit-appearance:none">다시 고를게요</button>
+      <button onclick="submitVote()" style="padding:14px;border-radius:11px;border:none;background:linear-gradient(135deg,#00b496,#008f78);font-size:14px;font-weight:800;font-family:inherit;cursor:pointer;color:#fff;-webkit-appearance:none">✓ 확정!</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+var DB='https://dream-vote-e947f-default-rtdb.asia-southeast1.firebasedatabase.app/vote_pw.json';
+var _c=null,poll=null,_h='',_pv=null;
+var myName=null,lastRound=-1,voted=false,sel=[];
+var curCnt=2,curMV=1,correctPw='',maxJ=9999,pending=[];
+var CL=['c1','c2','c3','c4','c5','c6','c7','c8'];
+
+function dbR(){
+  return fetch(DB+'?t='+Date.now(),{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(function(s){
+      if(!s||typeof s!=='object')s={};
+      if(s.judgeJoined&&!Array.isArray(s.judgeJoined))s.judgeJoined=Object.values(s.judgeJoined);
+      _c=s;return s;
+    });
+}
+function dbW(p){
+  var b=Object.assign({},_c,p);_c=b;
+  return fetch(DB,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});
+}
+function mkH(s){
+  if(!s)return'';
+  return[s.isOpen,s.round,s.roundCount,s.roundVotes,JSON.stringify(s.votes||{}),JSON.stringify(s.judgeVoted||{})].join('|');
+}
+function toast(m){var e=document.getElementById('toast');e.textContent=m;e.style.opacity='1';clearTimeout(e._t);e._t=setTimeout(function(){e.style.opacity='0';},2400);}
+function showScr(id){['s-load','s-pw','s-name','s-wait','s-vote','s-done'].forEach(function(x){var e=document.getElementById(x);if(e)e.className='scr'+(x===id?' on':'');});}
+
+function checkPw(){
+  var inp=document.getElementById('pw-in').value.trim(),err=document.getElementById('pw-err');
+  if(!correctPw){err.textContent='잠시 후 다시 시도해주세요';return;}
+  if(inp!==correctPw){
+    err.textContent='비밀번호가 틀렸습니다 ✗';
+    document.getElementById('pw-in').style.borderColor='var(--re)';
+    setTimeout(function(){err.textContent='';document.getElementById('pw-in').style.borderColor='';},2000);return;
+  }
+  showScr('s-name');
+}
+function doJoin(){
+  var nm=document.getElementById('nm-in').value.trim();
+  if(!nm){toast('이름을 입력해주세요');return;}
+  myName=nm;
+  document.getElementById('nm-pill').textContent=nm;
+  document.getElementById('vjn').textContent=nm;
+  showScr('s-wait');
+  var j=(_c&&Array.isArray(_c.judgeJoined))?_c.judgeJoined.slice():[];
+  if(!j.includes(nm)){j.push(nm);dbW({judgeJoined:j}).catch(function(){});}
+  _h='';startPoll();
+  // 입장 즉시 한 번 더 체크 (딜레이 제거)
+  dbR().then(handleState).catch(function(){});
+}
+function startPoll(){
+  if(poll)clearInterval(poll);
+  poll=setInterval(function(){
+    dbR().then(function(s){
+      if(!myName)return;
+      var h=mkH(s);if(h!==_h){_h=h;handleState(s);}
+    }).catch(function(){});
+  },500);
+}
+function buildBtns(s){
+  var cnt=parseInt(s.roundCount)||2,mv=parseInt(s.roundVotes)||1;
+  curCnt=cnt;curMV=mv;sel=[];
+  var c=document.getElementById('vbtns');
+  c.innerHTML='';c.className=cnt>=3?'vbtns g2':'vbtns';
+  for(var i=1;i<=cnt;i++){
+    var nm=s['name'+i]||'참가자 '+i,b=document.createElement('button');
+    b.className='vbtn '+CL[(i-1)%CL.length];b.id='vb'+i;
+    b.innerHTML='<div class="vn">'+i+'</div><div class="vnm">'+nm+'</div><div class="vsu">'+(mv===1?'탭하여 투표':'탭하여 선택')+'</div><div class="vbg" id="vbg'+i+'">✓</div>';
+    b.onclick=(function(idx){return function(){onTap(idx);};})(i);
+    c.appendChild(b);
+  }
+  document.getElementById('v-ins').textContent=mv===1?'1명을 선택하세요':mv+'명을 선택하세요';
+  document.getElementById('v-sub').textContent=mv===1?'탭하면 즉시 투표됩니다':mv+'명 선택 후 확정 버튼을 누르세요';
+  document.getElementById('cbar').style.display='none';
+}
+function showModal(choices){
+  pending=choices;
+  var s=_c||{};
+  document.getElementById('modal-names').textContent=choices.map(function(c){return s['name'+c]||'참가자 '+c;}).join(', ');
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){document.getElementById('modal').style.display='none';pending=[];}
+function submitVote(){document.getElementById('modal').style.display='none';doVote(pending);pending=[];}
+function onTap(idx){
+  if(voted)return;
+  if(curMV===1){showModal([idx]);return;}
+  var pos=sel.indexOf(idx);
+  if(pos>=0)sel.splice(pos,1);
+  else{if(sel.length>=curMV){toast(curMV+'명까지만 선택 가능합니다');return;}sel.push(idx);}
+  updSelUI();
+}
+function updSelUI(){
+  for(var i=1;i<=curCnt;i++){
+    var b=document.getElementById('vb'+i),bg=document.getElementById('vbg'+i);if(!b)continue;
+    var on=sel.indexOf(i)>=0;
+    if(on){b.classList.add('sel');bg.style.display='flex';}else{b.classList.remove('sel');bg.style.display='none';}
+  }
+  var cb=document.getElementById('cbar'),btn=document.getElementById('btn-confirm');
+  if(sel.length>0){cb.style.display='block';btn.textContent='✓ '+sel.length+'/'+curMV+'명 — 투표 확정';}
+  else cb.style.display='none';
+}
+function confirmVote(){
+  if(sel.length!==curMV){toast(curMV+'명을 선택해주세요');return;}
+  showModal(sel.slice());
+}
+function doVote(choices){
+  if(voted){toast('이미 투표하셨습니다');return;}
+  if(!_c||!_c.isOpen){toast('투표가 열려있지 않습니다');return;}
+  voted=true;
+  for(var i=1;i<=curCnt;i++){var b=document.getElementById('vb'+i);if(b)b.disabled=true;}
+  document.getElementById('cbar').style.display='none';
+  var jv=Object.assign({},((_c.judgeVoted)||{}));
+  var votes=Object.assign({},((_c.votes)||{}));
+  jv[myName]=choices.length===1?choices[0]:choices;
+  choices.forEach(function(c){votes[String(c)]=(parseInt(votes[String(c)])||0)+1;});
+  var s=_c;
+  dbW({judgeVoted:jv,votes:votes}).then(function(){
+    document.getElementById('chose-b').textContent=choices.map(function(c){return s['name'+c]||'참가자 '+c;}).join(', ');
+    _h=mkH(_c);setTimeout(function(){showScr('s-done');},300);
+  }).catch(function(e){
+    voted=false;
+    for(var i=1;i<=curCnt;i++){var b=document.getElementById('vb'+i);if(b)b.disabled=false;}
+    toast('투표 오류: '+e.message);
+  });
+}
+function handleState(s){
+  if(!s)return;
+  correctPw=String(s.pw||correctPw);
+  maxJ=parseInt(s.maxJudge)||9999;
+  var round=parseInt(s.round)||0;
+  if(round!==lastRound){
+    lastRound=round;voted=false;sel=[];
+    buildBtns(s);
+    var cb=document.getElementById('btn-confirm');
+    if(cb){cb.disabled=false;cb.textContent='✓ 투표 확정';}
+    document.getElementById('cbar').style.display='none';
+  }
+  var jv=(s.judgeVoted&&typeof s.judgeVoted==='object')?s.judgeVoted:{};
+  if(myName&&jv[myName])voted=true;
+  if(!myName)return;
+  if(voted){
+    var ch=jv[myName];
+    document.getElementById('chose-b').textContent=Array.isArray(ch)?ch.map(function(c){return s['name'+c]||'참가자 '+c;}).join(', '):(s['name'+ch]||'참가자 '+ch);
+    showScr('s-done');
+  }else if(s.isOpen){
+    for(var i=1;i<=curCnt;i++){var b=document.getElementById('vb'+i);if(b)b.disabled=false;}
+    showScr('s-vote');
+  }else{
+    showScr('s-wait');
+  }
+}
+dbR().then(function(s){
+  correctPw=String(s.pw||'');maxJ=parseInt(s.maxJudge)||9999;_h=mkH(s);
+  showScr('s-pw');
+}).catch(function(){showScr('s-pw');});
+document.addEventListener('visibilitychange',function(){
+  if(!document.hidden&&myName){_h='';dbR().then(handleState).catch(function(){});}
+});
+</script>
+</body>
+</html>
